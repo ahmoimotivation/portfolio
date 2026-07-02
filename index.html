@@ -21,6 +21,8 @@ h1,h2,h3,.brand{font-family:'Poppins',sans-serif}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 .ph{color:#C0563B;font-weight:600;background:#FBEDE9;padding:0 6px;border-radius:4px;font-size:.92em}
+
+/* NAV */
 nav{position:sticky;top:0;z-index:50;background:rgba(11,37,69,.96);backdrop-filter:blur(6px);border-bottom:2px solid var(--gold)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 nav .brand{color:#fff;font-weight:800;font-size:20px;letter-spacing:.5px}
@@ -30,8 +32,14 @@ nav .links a{color:#C7D3E8;font-size:14px;font-weight:500}
 nav .links a:hover{color:#fff}
 nav .cta{background:var(--gold);color:var(--navy);padding:8px 16px;border-radius:6px;font-weight:600;font-size:14px}
 @media(max-width:760px){nav .links a:not(.cta){display:none}}
-.hero{position:relative;color:#fff;min-height:88vh;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(11,37,69,.35) 0%,rgba(11,37,69,.78) 62%,var(--navy) 100%), url('./MoiMetrics_AI_Cover.jpg') center/cover no-repeat;}
-.hero .wrap{padding-bottom:60px;padding-top:80px}
+
+/* HERO */
+.hero{position:relative;color:#fff;min-height:88vh;display:flex;align-items:flex-end;
+  background:linear-gradient(180deg,rgba(11,37,69,.35) 0%,rgba(11,37,69,.78) 62%,var(--navy) 100%), url('./MoiMetrics_AI_Cover.jpg') center/cover no-repeat;}
+.hero .wrap{padding-bottom:60px;padding-top:80px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;width:100%}
+.hero-photo{flex:0 0 auto}
+.hero-photo img{width:clamp(200px,24vw,300px);aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:2px solid var(--gold);box-shadow:0 18px 44px rgba(0,0,0,.45);display:block}
+@media(max-width:760px){.hero .wrap{flex-direction:column;align-items:flex-start}.hero-photo{order:-1}.hero-photo img{width:180px}}
 .hero .kick{color:#C7D3E8;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
 .hero h1{font-size:clamp(40px,8vw,74px);font-weight:800;line-height:1;margin:12px 0 6px}
 .hero h1 span{color:var(--gold)}
@@ -42,12 +50,16 @@ nav .cta{background:var(--gold);color:var(--navy);padding:8px 16px;border-radius
 .btn-gold:hover{filter:brightness(1.08)}
 .btn-out{border:1.5px solid #91A6C6;color:#fff}
 .btn-out:hover{background:rgba(255,255,255,.1)}
+
+/* SECTIONS */
 section{padding:64px 0}
 .sec-kick{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
 .sec-h{font-size:clamp(26px,4vw,34px);font-weight:700;color:var(--navy);margin:6px 0 4px}
 .sec-rule{width:52px;height:3px;background:var(--gold);border-radius:2px;margin:14px 0 26px}
 .sub{color:var(--gray);max-width:640px;margin-bottom:8px}
 .alt{background:var(--light)}
+
+/* STAT BAND */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--navy);border:1.5px solid var(--gold);border-radius:12px;overflow:hidden}
 .stats>div{padding:26px 14px;text-align:center;border-right:1px solid #24406B}
 .stats>div:last-child{border-right:none}
@@ -55,6 +67,8 @@ section{padding:64px 0}
 .stats .num.g{color:var(--gold)}
 .stats .lbl{color:#C7D3E8;font-size:12px;margin-top:8px}
 @media(max-width:620px){.stats{grid-template-columns:1fr}.stats>div{border-right:none;border-bottom:1px solid #24406B}}
+
+/* TABLE */
 .tbl{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .tbl th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-family:'Poppins';font-size:13px}
 .tbl td{padding:11px 14px;border-bottom:1px solid var(--line)}
@@ -64,27 +78,38 @@ section{padding:64px 0}
 .tbl tr.total td{background:#EAF6F7;border-top:2px solid var(--teal);font-weight:700}
 .tbl tr.total .amt{color:var(--teal)}
 .note{font-size:12px;color:var(--gray);margin-top:10px}
+
+/* GALLERY */
 .gal{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}
 @media(max-width:700px){.gal{grid-template-columns:1fr}}
 .shot{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
 .shot img{width:100%;display:block}
 .shot .cap{padding:10px 14px;font-size:13px;color:var(--navy);font-weight:600;border-top:1px solid var(--line);display:flex;justify-content:space-between}
 .shot .cap span{color:var(--teal);font-weight:700}
+.gal-empty{border:2px dashed var(--teal);border-radius:10px;padding:34px;text-align:center;color:var(--teal);background:#EAF3F4;font-size:14px}
+
+/* SERVICE GRID */
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
 @media(max-width:700px){.grid{grid-template-columns:1fr}}
 .svc{background:#fff;border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:8px;padding:18px 18px}
 .svc h3{color:var(--navy);font-size:16px;margin-bottom:5px}
 .svc p{color:var(--gray);font-size:13.5px}
+
+/* COMPARE */
 .cmp{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .cmp th{background:var(--navy);color:#fff;padding:12px;text-align:left;font-family:'Poppins';font-size:13px}
 .cmp td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 .cmp td:first-child{font-weight:600;color:var(--navy);width:22%}
 .cmp td:last-child{background:#EAF6F7;border-left:2px solid var(--teal);width:38%}
 @media(max-width:700px){.cmp,.cmp tbody,.cmp tr,.cmp td,.cmp th{display:block}.cmp th{display:none}.cmp td{border:none;border-bottom:1px solid var(--line)}.cmp td:last-child{border-left:3px solid var(--teal)}}
+
+/* PHASES */
 .phase{display:flex;gap:16px;margin-bottom:18px;align-items:flex-start}
 .phase .tag{flex:0 0 96px;background:var(--teal);color:#fff;text-align:center;padding:8px 6px;border-radius:8px;font-weight:600;font-size:13px}
 .phase h3{color:var(--navy);font-size:16px;margin-bottom:3px}
 .phase p{color:var(--gray);font-size:14px}
+
+/* PACKAGES */
 .pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
 @media(max-width:760px){.pkgs{grid-template-columns:1fr}}
 .pkg{border:1px solid var(--line);border-radius:12px;padding:24px 20px;text-align:center;background:#fff}
@@ -98,11 +123,15 @@ section{padding:64px 0}
 .pkg ul{list-style:none;text-align:left;font-size:13.5px}
 .pkg li{padding:6px 0 6px 22px;position:relative;color:var(--dark)}
 .pkg.hot li{color:#E4ECF7}
-.pkg li:before{content:"\2713";position:absolute;left:0;color:var(--teal);font-weight:700}
+.pkg li:before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
 .pkg.hot li:before{color:var(--gold)}
+
+/* QUOTE */
 .quote{background:var(--light);border-left:3px solid var(--gold);border-radius:8px;padding:20px 22px;margin-bottom:14px}
 .quote p{font-style:italic;color:var(--dark)}
 .quote .by{font-size:13px;color:var(--gray);margin-top:8px}
+
+/* CTA */
 .cta-box{background:var(--navy);border:1.5px solid var(--gold);border-radius:14px;padding:40px;text-align:center;color:#fff}
 .cta-box h2{font-size:clamp(24px,4vw,32px);margin-bottom:10px}
 .cta-box p{color:#C7D3E8;max-width:560px;margin:0 auto 22px}
@@ -111,6 +140,7 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
 </style>
 </head>
 <body>
+
 <nav><div class="wrap">
   <div class="brand">Moi<span>Metrics</span></div>
   <div class="links">
@@ -121,15 +151,21 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
     <a class="cta" href="#contact">Book a call</a>
   </div>
 </div></nav>
+
 <header class="hero"><div class="wrap">
-  <div class="kick">Outsourced Digital Marketing for Growing Malaysian Businesses</div>
-  <h1>Moi<span>Metrics</span></h1>
-  <div class="tag">Marketing you can measure.</div>
-  <div class="btns">
-    <a class="btn btn-gold" href="#contact">Book a free strategy call</a>
-    <a class="btn btn-out" href="./MoiMetrics_Service_Proposal.pdf" target="_blank">Download proposal (PDF)</a>
+  <div class="hero-text">
+    <div class="kick">Outsourced Digital Marketing for Growing Malaysian Businesses</div>
+    <h1>Moi<span>Metrics</span></h1>
+    <div class="tag">Marketing you can measure.</div>
+    <div class="btns">
+      <a class="btn btn-gold" href="#contact">Book a free strategy call</a>
+      <a class="btn btn-out" href="./MoiMetrics_Service_Proposal.pdf" target="_blank">Download proposal (PDF)</a>
+    </div>
   </div>
+  <div class="hero-photo"><img src="./moi-photo.jpg" alt="Moi — Founder, MoiMetrics"></div>
 </div></header>
+
+<!-- TRACK RECORD -->
 <section id="track"><div class="wrap">
   <div class="sec-kick">Track Record</div>
   <h2 class="sec-h">RM4.26 million in ad spend, managed hands-on</h2>
@@ -155,6 +191,8 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
   </table>
   <p class="note">All figures are actual lifetime spend from Meta Ads Manager. Real budget I have been trusted to plan, run and optimize.</p>
 </div></section>
+
+<!-- PROOF -->
 <section id="proof" class="alt"><div class="wrap">
   <div class="sec-kick">Proof</div>
   <h2 class="sec-h">Straight from Meta Ads Manager</h2>
@@ -170,6 +208,8 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
     <div class="shot"><img src="screenshots/07-master-liv-intl.png" alt="Master Liv International Ads Manager" loading="lazy"><div class="cap">Master Liv International · 937 campaigns <span>RM135,508.63</span></div></div>
   </div>
 </div></section>
+
+<!-- SERVICES -->
 <section id="services"><div class="wrap">
   <div class="sec-kick">Services</div>
   <h2 class="sec-h">What I handle for you</h2>
@@ -187,6 +227,8 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
   </div>
   <p class="note">Languages: fluent in English &amp; Mandarin — ideal for Chinese-speaking business owners and clients.</p>
 </div></section>
+
+<!-- COMPARISON -->
 <section class="alt"><div class="wrap">
   <div class="sec-kick">The Comparison</div>
   <h2 class="sec-h">Outsource to me vs hire in-house</h2>
@@ -204,6 +246,8 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
     </tbody>
   </table>
 </div></section>
+
+<!-- HOW WE WORK -->
 <section><div class="wrap">
   <div class="sec-kick">How We Work</div>
   <h2 class="sec-h">Your first 90 days</h2>
@@ -212,6 +256,8 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
   <div class="phase"><div class="tag">Days 31–60<br>Optimize</div><div><h3>Optimize</h3><p>Double down on winners, cut what doesn't work, expand audiences, tighten cost-per-result, deliver first monthly report.</p></div></div>
   <div class="phase"><div class="tag">Days 61–90<br>Scale</div><div><h3>Scale</h3><p>Scale profitable campaigns, add channels where they fit, build repeatable systems and a growth roadmap.</p></div></div>
 </div></section>
+
+<!-- PRICING -->
 <section id="pricing" class="alt"><div class="wrap">
   <div class="sec-kick">Investment</div>
   <h2 class="sec-h">Simple monthly packages</h2>
@@ -226,6 +272,8 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
   </div>
   <p class="note">Prices are placeholders — set your own once you decide your rates.</p>
 </div></section>
+
+<!-- TESTIMONIALS -->
 <section><div class="wrap">
   <div class="sec-kick">What Clients Say</div>
   <h2 class="sec-h">Trusted by business owners</h2>
@@ -233,6 +281,8 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
   <div class="quote"><p>“ <span class="ph">[ Paste a short client testimonial — 1–2 sentences on the result you delivered ]</span> ”</p><div class="by">— <span class="ph">[ Client name, Company ]</span></div></div>
   <div class="quote"><p>“ <span class="ph">[ Second testimonial here ]</span> ”</p><div class="by">— <span class="ph">[ Client name, Company ]</span></div></div>
 </div></section>
+
+<!-- CONTACT -->
 <section id="contact" class="alt"><div class="wrap">
   <div class="cta-box">
     <h2>Let's grow your business.</h2>
@@ -242,6 +292,7 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
     </div>
   </div>
 </div></section>
+
 <footer>© <span id="yr"></span> MoiMetrics · Outsourced Digital Marketing · Malaysia</footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
