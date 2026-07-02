@@ -37,9 +37,9 @@ nav .cta{background:var(--gold);color:var(--navy);padding:8px 16px;border-radius
 .hero{position:relative;color:#fff;min-height:88vh;display:flex;align-items:flex-end;
   background:linear-gradient(180deg,rgba(11,37,69,.35) 0%,rgba(11,37,69,.78) 62%,var(--navy) 100%), url('./MoiMetrics_AI_Cover.jpg') center/cover no-repeat;}
 .hero .wrap{padding-bottom:60px;padding-top:80px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;width:100%}
-.hero-photo{flex:0 0 auto}
-.hero-photo img{width:clamp(200px,24vw,300px);aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:2px solid var(--gold);box-shadow:0 18px 44px rgba(0,0,0,.45);display:block}
-@media(max-width:760px){.hero .wrap{flex-direction:column;align-items:flex-start}.hero-photo{order:-1}.hero-photo img{width:180px}}
+.hero-photo{flex:0 0 auto;margin-bottom:-60px}
+.hero-photo img{width:clamp(240px,30vw,380px);display:block;filter:drop-shadow(0 24px 48px rgba(0,0,0,.5));-webkit-mask-image:linear-gradient(180deg,#000 78%,rgba(0,0,0,.4) 92%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,rgba(0,0,0,.4) 92%,transparent 100%)}
+@media(max-width:760px){.hero .wrap{flex-direction:column;align-items:flex-start}.hero-photo{order:-1;margin-bottom:0}.hero-photo img{width:210px}}
 .hero .kick{color:#C7D3E8;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
 .hero h1{font-size:clamp(40px,8vw,74px);font-weight:800;line-height:1;margin:12px 0 6px}
 .hero h1 span{color:var(--gold)}
@@ -162,7 +162,7 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
       <a class="btn btn-out" href="./MoiMetrics_Service_Proposal.pdf" target="_blank">Download proposal (PDF)</a>
     </div>
   </div>
-  <div class="hero-photo"><img src="./moi-photo.jpg" alt="Moi — Founder, MoiMetrics"></div>
+  <div class="hero-photo"><img src="./moi-photo-cutout.webp" alt="Moi — Founder, MoiMetrics"></div>
 </div></header>
 
 <!-- TRACK RECORD -->
