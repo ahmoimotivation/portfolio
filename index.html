@@ -69,6 +69,13 @@ section.dark{background:linear-gradient(180deg,#0B2545 0%,#12335E 100%)}
 .dark .sub{color:#C7D3E8}
 .dark .sec-kick{color:var(--gold)}
 .dark .shot{border-color:rgba(255,255,255,.18)}
+.brand-flex{display:flex;gap:48px;align-items:center;margin-top:10px}
+.brand-phone{flex:0 0 auto;width:clamp(230px,26vw,320px);border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 48px rgba(11,37,69,.22);background:#000}
+.brand-phone img{width:100%;display:block}
+.brand-stats{display:flex;gap:30px;margin-top:26px;flex-wrap:wrap}
+.brand-stats b{display:block;font-family:'Poppins';font-weight:800;font-size:24px;color:var(--teal);line-height:1.1}
+.brand-stats span{font-size:12px;color:var(--gray);letter-spacing:.4px}
+@media(max-width:760px){.brand-flex{flex-direction:column}}
 
 /* STAT BAND */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--navy);border:1.5px solid var(--gold);border-radius:12px;overflow:hidden}
@@ -236,6 +243,22 @@ footer{background:var(--navy);color:#8CA0C0;text-align:center;padding:26px;font-
     <div class="shot"><img src="slides/case-7.jpg" alt="Viral video ads" loading="lazy"><div class="cap">Viral video ads · single post <span>1.5M reach · 1.1M views</span></div></div>
     <div class="shot"><img src="slides/case-5.jpg" alt="知梦人 page insights" loading="lazy"><div class="cap">知梦人 · 28 days <span>911,950 people reached</span></div></div>
     <div class="shot"><img src="slides/case-6.jpg" alt="Master Liv page insights" loading="lazy"><div class="cap">Master Liv · 28 days <span>1,011,173 reached · +62% eng.</span></div></div>
+  </div>
+</div></section>
+<section id="brand" class="alt"><div class="wrap">
+  <div class="brand-flex">
+    <div>
+      <div class="sec-kick">Personal Brand</div>
+      <h2 class="sec-h">10,000,000+ organic video views</h2>
+      <div class="sec-rule"></div>
+      <p class="sub">I practise what I sell. My own health-content brand <b>Ah Moi Motivation (阿Moi)</b> pulls millions of views on Reels &amp; TikTok — zero ad spend, pure content skill. The same viral engine goes to work on your brand.</p>
+      <div class="brand-stats">
+        <div><b>2.1M</b><span>Best single video</span></div>
+        <div><b>9 videos</b><span>Above 570K views each</span></div>
+        <div><b>100%</b><span>Organic — no boosting</span></div>
+      </div>
+    </div>
+    <div class="brand-phone"><img src="brand-grid.jpg" alt="Ah Moi Motivation viral reels — 2.1M, 1.9M, 1.2M views" loading="lazy"></div>
   </div>
 </div></section>
 <section id="services"><div class="wrap">
