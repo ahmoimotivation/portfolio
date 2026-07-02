@@ -1,0 +1,16 @@
+name: fetch-hero
+on: push
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: curl -sL "https://d8j0ntlcm91z4.cloudfront.net/user_3EhwCYnKpldNf6ZgKnn8NydXpSL/hf_20260702_054850_518f23bd-65d7-4f94-aef3-b7415df5038a.png" -o hero-bg.png
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add hero-bg.png
+          git diff --cached --quiet || git commit -m "Add hero background image"
+          git push
