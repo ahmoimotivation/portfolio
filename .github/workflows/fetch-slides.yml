@@ -1,0 +1,32 @@
+name: fetch-slides
+on: push
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pillow
+      - run: |
+          mkdir -p slides
+          curl -sL "https://export-download.canva.com/Mj0jc/DAGBUYMj0jc/-1/0/0003-5484766656215725390.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20260701%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260701T132518Z&X-Amz-Expires=65712&X-Amz-Signature=ae7d39308d0591c6be06075755dc5c035d4803685fa51f23dc1b418435575b74&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Thu%2C%2002%20Jul%202026%2007%3A40%3A30%20GMT" -o slides/raw3.jpg
+          curl -sL "https://export-download.canva.com/Mj0jc/DAGBUYMj0jc/-1/0/0005-5484766656215725390.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20260701%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260701T231136Z&X-Amz-Expires=31444&X-Amz-Signature=9b6298b8fde3196c92fe25ee11abeb50b47957a2f0e01ad93e6ac14b099fd8b0&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Thu%2C%2002%20Jul%202026%2007%3A55%3A40%20GMT" -o slides/raw5.jpg
+          curl -sL "https://export-download.canva.com/Mj0jc/DAGBUYMj0jc/-1/0/0006-5484766656215725390.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20260701%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260701T165749Z&X-Amz-Expires=52113&X-Amz-Signature=df330a16e4e8e7ff687361357353d72b062ccc6cc87dcea2ef91d9e57c462a84&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Thu%2C%2002%20Jul%202026%2007%3A26%3A22%20GMT" -o slides/raw6.jpg
+          curl -sL "https://export-download.canva.com/Mj0jc/DAGBUYMj0jc/-1/0/0007-5484766656215725390.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20260702%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260702T001706Z&X-Amz-Expires=25266&X-Amz-Signature=02a24e56a10e7d1adfa8997fa9813ef9db7a0b0a3c721eb4648d1cb6dc9b263e&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Thu%2C%2002%20Jul%202026%2007%3A18%3A12%20GMT" -o slides/raw7.jpg
+      - run: |
+          python3 << 'PYEOF'
+          from PIL import Image
+          for n in (3, 5, 6, 7):
+              im = Image.open("slides/raw%d.jpg" % n).convert("RGB")
+              im.thumbnail((1400, 1400))
+              im.save("slides/case-%d.jpg" % n, quality=82, optimize=True, progressive=True)
+          PYEOF
+      - run: |
+          rm slides/raw*.jpg
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add slides
+          git rm -q .github/workflows/fetch-slides.yml
+          git commit -m "Add case study slides from Canva"
+          git push
